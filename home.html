@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap-4.4.1/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome-free-5.15.1-web/css/all.min.css' %}">
+    <script src="{% static 'jquery-3.5.1.js' %}"></script>
+    <!--ajax phase-->
+    <script type="text/javascript" src="{% static 'index.js' %}"></script>
+    <script src="{% static 'popper.min.js' %}"></script>
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap-4.4.1/dist/js/bootstrap.min.js'%}"></script>
+
+    <style>
+        .carousel-inner img{
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        #info{
+              z-index=-1;
+              background-color:red;
+              cursor:pointer;
+        }
+        #doctors{
+
+
+        }
+        body{
+             background-color:purple;
+        }
+        .book{
+              color:red;
+        }
+
+        ul {
+               list-style-type:none;
+               z-index=-1;
+              background-color:red;
+              cursor:pointer;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="navbar bg-success navbar-light navbar-default ">
+        <table class="table table-sm table-borderless">
+        <tr>
+            <td class="">
+                <ul class="nav nav-pills justify-content-center">
+                    <li class="nav-item"><a class="navbar-brand text-center nav-link active" href="#" id="Book_Appointment">Book Appointment</a></li>
+                    <li class="nav-item"><a class="navbar-brand text-center nav-link active" href="#" id="Consult_Online">Consult Online</a></li>
+                    <li class="nav-item"><a class="navbar-brand text-center nav-link active" href="#" id="Book_Health_Check">Book Health Check</a></li>
+                    <li class="nav-item"><a class="navbar-brand text-center nav-link active" href="#" id="Health_Library">Health Library</a></li>
+                </ul>
+            </td>
+            <td>
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Name Speciality" aria-label="Search" id="searchBox">
+
+
+                        <div class="input-group-append">
+                            <button class="btn btn-info" type="submit" id="Go">Go</button>
+                        </div>
+                    </div>
+                    <div id="info"></div>
+            </td>
+            <td class="float-right">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            </td>
+        </tr>
+        </table>
+
+
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar2">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<br>
+<div id="success" class="bg-success"></div>
+<div id="unsuccess" class="bg-danger"></div>
+<div id="doctors" class="container-fluid"></div>
+<div id="demo" class="carousel slide" data-ride="carousel" class="container-fluid">
+
+       <!--Indicators-->
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+
+       <!-- the slideshow -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'images/photo-1551049215-23fd6d2ac3f1.jpeg' %}" width="1100" height="500">
+        </div>
+        <div class="carousel-item ">
+            <img src="{% static 'images/photo-1559757148-5c350d0d3c56.jpeg' %}" width="1100" height="500">
+        </div>
+        <div class="carousel-item ">
+            <img src="{% static 'images/photo-1560582861-45078880e48e.jpeg' %}" width="1100" height="500">
+        </div>
+        <div class="carousel-item ">
+            <img src="{% static 'images/photo-1453847668862-487637052f8a.jpeg' %}" width="1100" height="500">
+        </div>
+        <div class="carousel-item ">
+            <img src="{% static 'images/photo-1505751172876-fa1923c5c528.jpeg' %}" width="1100" height="500">
+        </div>
+        <div class="carousel-item ">
+            <img src="{% static 'images/photo-1508387104394-d13e1b497f85.jpeg' %}" width="1100" height="500">
+        </div>
+        <div class="carousel-item ">
+            <img src="{% static 'images/photo-1560582861-45078880e48e.jpeg' %}" width="1100" height="500">
+        </div>
+        <div class="carousel-item ">
+            <img src="{% static 'images/photo-1508387150737-7ce104ed3b0a.jpeg' %}" width="1100" height="500">
+        </div>
+        <div class="carousel-item ">
+            <img src="{% static 'images/photo-1512069772995-ec65ed45afd6.jpeg' %}" width="1100" height="500">
+        </div>
+        <div class="carousel-item ">
+            <img src="{% static 'images/photo-1530026186672-2cd00ffc50fe.jpeg' %}" width="1100" height="500">
+        </div>
+    </div>
+
+        <!-- Left and Right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon bg-success"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon bg-success"></span>
+    </a>
+</div>
+
+<h1>Hospital location</h1>
+<div class="table-responsive">
+    <table class="table table-bordered bg-color:pink">
+        <tr>
+            <td><a href="">Ahmedabad</a><br>
+                <a href="">Chennai</a><br>
+                <a href="">Indore</a><br>
+                <a href="">Mumbai</a>
+            </td>
+            <td>
+                <a href="">Bhubaneshwar</a><br>
+                <a href="">Delhi</a><br>
+                <a href="">Kolkata</a><br>
+                <a href="">Visakhapatnam</a>
+            </td>
+            <td>
+                <a href="">Bangalore</a><br>
+                <a href="">Hyderabad</a><br>
+                <a href="">Lucknow</a><br>
+                <a href="">Patna</a>
+            </td>
+
+        </tr>
+    </table>
+
+
+
+</div>
+</body>
+</html>
